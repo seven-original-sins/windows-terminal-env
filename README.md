@@ -1,8 +1,8 @@
-# 配置 windows terminal 开发环境
+# Windows Terminal Env
 
-- windows terminal 简介
+![](image/posh.png)
 
-## settings
+## Settings
 
 ```js
 {
@@ -70,18 +70,20 @@
 }
 ```
 
-## oh-my-posh
+## Powershell
+
+### oh-my-posh
 
 <https://github.com/JanDeDobbeleer/oh-my-posh>
 
-### 安装
+安装
 
 ```
 Install-Module posh-git -Scope CurrentUser
 Install-Module oh-my-posh -Scope CurrentUser
 ```
 
-### 使用
+使用
 
 ```
 # Start the default settings
@@ -90,43 +92,43 @@ Set-Prompt
 Set-Theme Agnoster
 ```
 
-#### 解决乱码
+解决乱码
 
 [下载字体](https://github.com/seven-original-sins/windows-terminal-env/raw/master/Delugia.Nerd.Font.Complete.ttf)，右键安装
 
-## Terminal-Icons
+### Terminal-Icons
 
 <https://github.com/devblackops/Terminal-Icons>
 
-### 安装
+安装
 
 ```
 Install-Module -Name Terminal-Icons -Repository PSGallery
 ```
 
-### 使用
+使用
 
 ```
 Import-Module -Name Terminal-Icons
 ```
 
-## scoop
+## Scoop
 
 <https://scoop.sh/>
 
-### 安装
+安装
 
 ```
 iwr -useb get.scoop.sh | iex
 ```
 
-### 使用
+使用
 
 ```
 scoop install vim
 ```
 
-## 设置启动项
+## Powershellrc
 
 ```
 vim ~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
@@ -136,3 +138,11 @@ vim ~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
 Set-Prompt
 Import-Module -Name Terminal-Icons
 ```
+
+## WSL
+
+### zsh
+
+虽然以前在mac下用惯了oh-my-zsh，但配了半天感觉还是没有oh-my-posh好看。
+
+![](image/zsh.png)
