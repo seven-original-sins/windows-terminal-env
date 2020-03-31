@@ -1,10 +1,10 @@
 # 配置 windows terminal 开发环境
 
-windows terminal 简介
+- windows terminal 简介
 
 ## settings
 
-```json
+```js
 {
     // ...
     "profiles":
@@ -86,7 +86,7 @@ Set-Theme Agnoster
 
 #### 解决乱码
 
-[下载字体](./Delugia.Nerd.Font.Complete)，右键安装
+[下载字体](https://github.com/seven-original-sins/windows-terminal-env/raw/master/Delugia.Nerd.Font.Complete.ttf)，右键安装
 
 ## Terminal-Icons
 
