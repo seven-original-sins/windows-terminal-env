@@ -6,7 +6,6 @@
 
 ```js
 {
-    // ...
     "profiles":
     {
         // 全局通用的默认配置
@@ -22,43 +21,50 @@
             "acrylicOpacity": 0.8
         },
         "list": [
-            // 每一项配置一个shell
+            // 每项的单独配置
             {
                 // 生成 guid 可以用 Powershell 命令 [guid]::NewGuid()
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "name": "Windows PowerShell",
                 "commandline": "powershell.exe",
-                // 工作目录
-                "startingDirectory": ".",
                 // 颜色样式
-                "colorScheme": "Belafonte Night",
+                "colorScheme": "Gruvbox Dark",
                 "hidden": false
             },
+            {
+                "guid": "{4dcf890b-2a4d-4aee-ad84-9d2fc9272dde}",
+                "name": "Git Bash",
+                // 后面可以接 -c \"ssh root@xx.com\" 作为ssh连接终端
+                "commandline": "\"%PROGRAMFILES%\\git\\usr\\bin\\bash.exe\" -i -l",
+                // ms-appdata///Local/指向当前profiles.json文件所在目录
+                "icon": "ms-appdata:///Local/git.png",
+                "hidden": false
+            }
         ]
     },
     "schemes": [
         // 每一项配置一个颜色样式
         // 可以到这里挑喜欢的 https://github.com/mbadolato/iTerm2-Color-Schemes/tree/master/windowsterminal
         {
-            "name": "Belafonte Night",
-            "black": "#20111b",
-            "red": "#be100e",
-            "green": "#858162",
-            "yellow": "#eaa549",
-            "blue": "#426a79",
-            "purple": "#97522c",
-            "cyan": "#989a9c",
-            "white": "#968c83",
-            "brightBlack": "#5e5252",
-            "brightRed": "#be100e",
-            "brightGreen": "#858162",
-            "brightYellow": "#eaa549",
-            "brightBlue": "#426a79",
-            "brightPurple": "#97522c",
-            "brightCyan": "#989a9c",
-            "brightWhite": "#d5ccba",
-            "background": "#20111b",
-            "foreground": "#968c83"
+            "name": "Gruvbox Dark",
+            "black": "#1e1e1e",
+            "red": "#be0f17",
+            "green": "#868715",
+            "yellow": "#cc881a",
+            "blue": "#377375",
+            "purple": "#a04b73",
+            "cyan": "#578e57",
+            "white": "#978771",
+            "brightBlack": "#7f7061",
+            "brightRed": "#f73028",
+            "brightGreen": "#aab01e",
+            "brightYellow": "#f7b125",
+            "brightBlue": "#719586",
+            "brightPurple": "#c77089",
+            "brightCyan": "#7db669",
+            "brightWhite": "#e6d4a3",
+            "background": "#1e1e1e",
+            "foreground": "#e6d4a3"
         }
     ],
 }
@@ -124,4 +130,9 @@ scoop install vim
 
 ```
 vim ~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+```
+将以上的设置命令写入启动项
+```
+Set-Prompt
+Import-Module -Name Terminal-Icons
 ```
